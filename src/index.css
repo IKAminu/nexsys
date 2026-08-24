@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-bg-base: #07111F;
+  --color-surface: #0D1B2A;
+  --color-surface-2: #1B2430;
+  --color-surface-3: #162233;
+  --color-border: #1E3048;
+  --color-border-dim: #0F2035;
+  --color-blue: #1769FF;
+  --color-blue-dim: #0F50CC;
+  --color-cyan: #21D4FD;
+  --color-text: #F5F7FA;
+  --color-text-dim: #E8ECF2;
+  --color-text-muted: #8BA3BC;
+  --color-v-blue: #1769FF;
+  --color-v-green: #22C55E;
+  --color-v-orange: #F97316;
+  --color-v-purple: #A855F7;
+
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #07111F;
+  color: #F5F7FA;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid #1769FF;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: rgba(23, 105, 255, 0.3);
+  color: #F5F7FA;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07111F;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3048;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1769FF;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ecosystem animation card transitions */
+.eco-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Node pulse animation for hero */
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.6; r: 3; }
+  50% { opacity: 1; r: 4.5; }
+}
+
+@keyframes lineTravel {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out both;
+}
+
+/* Venture card focus ring */
+.venture-card-active {
+  box-shadow: 0 0 0 1px currentColor, 0 8px 32px rgba(0, 0, 0, 0.4);
+}
