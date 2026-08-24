@@ -1,0 +1,10 @@
+{
+  "description": "Streamlines project management by enabling teams to design, organize, and track tasks efficiently in a collaborative online workspace.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
