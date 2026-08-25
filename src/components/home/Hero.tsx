@@ -79,8 +79,8 @@ export default function Hero() {
         aria-hidden="true"
         style={{
           backgroundImage: `url(${worldBackground})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundSize: "100% 100%",
+          backgroundPosition: "center top",
           backgroundRepeat: "no-repeat",
           opacity: 0.36,
           mixBlendMode: "screen",
