@@ -12,9 +12,9 @@ export default function NexoraLogo({
   className = "",
 }: NexoraLogoProps) {
   const sizes = {
-    sm: { width: 128, height: 38 },
-    md: { width: 154, height: 44 },
-    lg: { width: 188, height: 54 },
+    sm: { width: 138, height: 41 },
+    md: { width: 166, height: 47 },
+    lg: { width: 202, height: 58 },
   }
 
   const s = sizes[size]
