@@ -57,7 +57,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#07111F" }} aria-labelledby="hero-heading">
       <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-        <div className="bg-world-background absolute inset-0" style={{ backgroundImage: `url(${worldBackground})`, backgroundSize: "cover", backgroundPosition: "right center", backgroundRepeat: "no-repeat", opacity: 0.36, mixBlendMode: "screen" }} />
+        <div className="bg-world-background absolute inset-0" style={{ backgroundImage: `url(${worldBackground})`, backgroundSize: "cover", backgroundPosition: "right top", backgroundRepeat: "no-repeat", opacity: 0.36, mixBlendMode: "screen" }} />
       </div>
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(30, 48, 72, 0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 48, 72, 0.25) 1px, transparent 1px)", backgroundSize: "48px 48px" }} aria-hidden="true" />
       <Container>
