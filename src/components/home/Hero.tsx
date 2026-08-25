@@ -59,7 +59,7 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
         <div className="bg-world-background absolute inset-0" style={{ backgroundImage: `url(${worldBackground})`, backgroundSize: "100% auto", backgroundPosition: "center top", backgroundRepeat: "no-repeat", opacity: 0.36, mixBlendMode: "screen" }} />
       </div>
-      <style>{`@media (max-width: 767px) { .bg-world-background { background-size: cover !important; background-position: left center !important; } }`}</style>
+      <style>{`@media (max-width: 767px) { .bg-world-background { background-size: cover !important; background-position: right center !important; } }`}</style>
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(30, 48, 72, 0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 48, 72, 0.25) 1px, transparent 1px)", backgroundSize: "48px 48px" }} aria-hidden="true" />
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-screen py-24 lg:py-0">
