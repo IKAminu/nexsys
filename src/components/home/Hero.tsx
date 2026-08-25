@@ -63,7 +63,7 @@ export default function Hero() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-screen py-24 lg:py-0">
           <div className="order-2 lg:order-1"><p className="text-xs font-semibold tracking-[0.22em] uppercase mb-5 animate-fade-in-up" style={{ color: "#1769FF", animationDelay: "0ms" }}>Nexora Systems Limited</p><h1 id="hero-heading" className="text-4xl md:text-5xl xl:text-[3.6rem] font-bold leading-[1.08] text-white mb-6 animate-fade-in-up" style={{ animationDelay: "80ms" }}>Building connected technology-driven businesses.</h1><p className="text-base md:text-lg leading-relaxed mb-10 max-w-lg animate-fade-in-up" style={{ color: "#8BA3BC", animationDelay: "160ms" }}>One parent company. Four ventures. A single ecosystem designed to help businesses operate, learn, connect and grow.</p><div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up" style={{ animationDelay: "240ms" }}><Button href="#ecosystem" variant="primary" size="md" arrow onClick={(e) => { e.preventDefault(); document.getElementById("ecosystem")?.scrollIntoView({ behavior: "smooth" }) }}>Discover Our Ecosystem</Button><Button href="/contact" variant="outline" size="md">Partner With Us</Button></div></div>
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end"><NetworkVisual /></div>
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end pt-24 lg:pt-24"><NetworkVisual /></div>
         </div>
       </Container>
       <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none" style={{ background: "linear-gradient(transparent, #07111F)" }} aria-hidden="true" />
