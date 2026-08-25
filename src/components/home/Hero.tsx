@@ -37,7 +37,7 @@ function NetworkVisual() {
         {Array.from({ length: 10 }).map((_, i) => <line key={`h${i}`} x1="0" y1={i * 55 + 2.5} x2="580" y2={i * 55 + 2.5} stroke="#1E3048" strokeWidth="0.5" opacity="0.4" />)}
         {Array.from({ length: 11 }).map((_, i) => <line key={`v${i}`} x1={i * 58} y1="0" x2={i * 58} y2="550" stroke="#1E3048" strokeWidth="0.5" opacity="0.4" />)}
         {edges.map(([a, b], i) => { const na = nodes[a]; const nb = nodes[b]; const isConnectedToCenter = a === 0 || b === 0; return <line key={i} x1={na.x} y1={na.y} x2={nb.x} y2={nb.y} stroke={isConnectedToCenter ? "#1769FF" : "#1E3048"} strokeWidth={isConnectedToCenter ? "1" : "0.75"} strokeOpacity={isConnectedToCenter ? "0.35" : "0.5"} /> })}
-        {[[0, 14], [0, 5], [0, 15], [2, 0]].map(([a, b], i) => { const na = nodes[a]; const nb = nodes[b]; return <circle key={`travel-${i}`} r="2" fill="#21D4FD" opacity="0.8"><animateMotion dur={`${2.5 + i * 0.8}s`} repeatCount="indefinite" begin={`${i * 0.6}s`}><mpath href={`#path-${i}`} /></animateMotion><animate attributeName="opacity" values="0;0.9;0" dur={`${2.5 + i * 0.8}s`} repeatCount="indefinite" begin={`${i * 0.6}s`} /></circle> })}
+        {[[0, 14], [0, 5], [0, 15], [2, 0]].map(([a, b], i) => <circle key={`travel-${i}`} r="2" fill="#21D4FD" opacity="0.8"><animateMotion dur={`${2.5 + i * 0.8}s`} repeatCount="indefinite" begin={`${i * 0.6}s`}><mpath href={`#path-${i}`} /></animateMotion><animate attributeName="opacity" values="0;0.9;0" dur={`${2.5 + i * 0.8}s`} repeatCount="indefinite" begin={`${i * 0.6}s`} /></circle>)}
         {nodes.filter((n) => !n.isCenter).map((node) => <g key={node.id}><circle cx={node.x} cy={node.y} r={node.r * 2.5} fill="url(#nodeGlow)" filter="url(#blur-sm)" opacity="0.5" /><circle cx={node.x} cy={node.y} r={node.r} fill="#0D1B2A" stroke="#1769FF" strokeWidth="1" strokeOpacity="0.7"><animate attributeName="opacity" values="0.6;1;0.6" dur={`${2 + (node.id % 4) * 0.7}s`} repeatCount="indefinite" /></circle></g>)}
         <g filter="url(#glow)"><circle cx={290} cy={275} r={40} fill="url(#centerGlow)" /><circle cx={290} cy={275} r={28} fill="#07111F" stroke="#1769FF" strokeWidth="1.5" /><circle cx={290} cy={275} r={22} fill="#0D1B2A" stroke="#1769FF" strokeWidth="0.75" strokeOpacity="0.4" /><g transform="translate(278, 263)"><path d="M0 0v24h5V8l12 16h5V0h-5v16L5 0H0z" fill="#1769FF" /><line x1="5" y1="0" x2="17" y2="24" stroke="#21D4FD" strokeWidth="1" opacity="0.8" /></g><circle cx={290} cy={275} r={28} fill="none" stroke="#1769FF" strokeWidth="1"><animate attributeName="r" values="28;42;28" dur="3s" repeatCount="indefinite" /><animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite" /></circle></g>
         <line x1="0" y1="0" x2="40" y2="0" stroke="#1769FF" strokeWidth="1.5" opacity="0.3" /><line x1="0" y1="0" x2="0" y2="40" stroke="#1769FF" strokeWidth="1.5" opacity="0.3" /><line x1="580" y1="550" x2="540" y2="550" stroke="#1769FF" strokeWidth="1.5" opacity="0.3" /><line x1="580" y1="550" x2="580" y2="510" stroke="#1769FF" strokeWidth="1.5" opacity="0.3" />
@@ -49,7 +49,18 @@ function NetworkVisual() {
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#07111F" }} aria-labelledby="hero-heading">
-      <img src={worldBackground} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" style={{ opacity: 0.16, mixBlendMode: "screen" }} aria-hidden="true" />
+      <div
+        className="absolute inset-0 pointer-events-none select-none"
+        aria-hidden="true"
+        style={{
+          backgroundImage: `url(${worldBackground})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.16,
+          mixBlendMode: "screen",
+        }}
+      />
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(30, 48, 72, 0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 48, 72, 0.25) 1px, transparent 1px)", backgroundSize: "48px 48px" }} aria-hidden="true" />
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-screen py-24 lg:py-0">
