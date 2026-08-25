@@ -20,7 +20,7 @@ const ventureLogos: Record<string, string> = {
 
 export default function VentureMark({
   venture,
-  size = 40,
+  size = 44,
   showName = false,
   className = "",
 }: VentureMarkProps) {
