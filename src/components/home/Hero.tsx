@@ -1,5 +1,6 @@
 import Button from "@/components/ui/Button"
 import Container from "@/components/ui/Container"
+import worldBackground from "@/assets/world-background.svg"
 
 /* Abstract network of nodes with connecting lines — original digital infrastructure visual */
 function NetworkVisual() {
@@ -39,6 +40,14 @@ function NetworkVisual() {
       style={{ aspectRatio: "1 / 1", maxWidth: 580 }}
       aria-hidden="true"
     >
+      {/* World background — kept behind the animated network */}
+      <img
+        src={worldBackground}
+        alt=""
+        className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+        style={{ opacity: 0.28, mixBlendMode: "screen" }}
+      />
+
       {/* Radial gradient backdrop */}
       <div
         className="absolute inset-0 rounded-full"
@@ -52,7 +61,7 @@ function NetworkVisual() {
         viewBox="0 0 580 550"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full"
+        className="relative w-full h-full"
       >
         <defs>
           <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
