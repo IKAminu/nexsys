@@ -1,3 +1,7 @@
+import nexoraSystemsLogo from "@/assets/nexora-systems-logo.svg"
+import nexoraSkillNetLogo from "@/assets/nexora-skillnet-logo.svg"
+import nexoraMarketplaceLogo from "@/assets/nexora-marketplace-logo.svg"
+import enyigoLogisticsLogo from "@/assets/enyigo-logistics-logo.svg"
 import type { Venture } from "@/data/ventures"
 
 interface VentureMarkProps {
@@ -7,52 +11,32 @@ interface VentureMarkProps {
   className?: string
 }
 
+const ventureLogos: Record<string, string> = {
+  "nexora-systems": nexoraSystemsLogo,
+  "nexora-skillnet": nexoraSkillNetLogo,
+  "nexora-marketplace": nexoraMarketplaceLogo,
+  "enyigo-logistics": enyigoLogisticsLogo,
+}
+
 export default function VentureMark({
   venture,
   size = 40,
   showName = false,
   className = "",
 }: VentureMarkProps) {
-  const fontSize = size * 0.36
-  const smallLetter = venture.letter.length > 1
+  const logo = ventureLogos[venture.id]
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      <svg
+      <img
+        src={logo}
+        alt=""
         width={size}
         height={size}
-        viewBox="0 0 40 40"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        className="shrink-0 object-contain"
+        style={{ width: size, height: size, objectFit: "contain" }}
         aria-hidden="true"
-      >
-        {/* Background square with subtle border */}
-        <rect
-          x="1"
-          y="1"
-          width="38"
-          height="38"
-          rx="3"
-          fill={venture.accentColorDim}
-          stroke={venture.accentColor}
-          strokeWidth="1"
-          strokeOpacity="0.6"
-        />
-        {/* Letter mark */}
-        <text
-          x="20"
-          y="20"
-          textAnchor="middle"
-          dominantBaseline="central"
-          fill={venture.accentColor}
-          fontFamily="Inter, system-ui, sans-serif"
-          fontSize={smallLetter ? fontSize * 0.75 : fontSize}
-          fontWeight="700"
-          letterSpacing={smallLetter ? "-0.5" : "0"}
-        >
-          {venture.letter}
-        </text>
-      </svg>
+      />
 
       {showName && (
         <div className="flex flex-col leading-none">
