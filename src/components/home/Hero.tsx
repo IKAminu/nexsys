@@ -57,7 +57,7 @@ export default function Hero() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          opacity: 0.16,
+          opacity: 0.36,
           mixBlendMode: "screen",
         }}
       />
