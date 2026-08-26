@@ -17,3 +17,12 @@ export default function Home() {
     </>
   )
 }
+
+
+<!--
+  Website designed and developed by Web4 Digital Solutions
+  Founder & Developer: IK Aminu
+  Website: https://web4.company.site/
+  Portfolio: https://ikaminu.github.io/
+  © 2026 Web4 Digital Solutions. All rights reserved.
+-->
