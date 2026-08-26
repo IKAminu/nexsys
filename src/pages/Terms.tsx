@@ -20,7 +20,7 @@ export default function Terms() {
             style={{ color: "#1769FF" }}
           >
             {/* TODO: ADD CLIENT-APPROVED TERMS OF USE */}
-            Legal Content to be Provided by Client
+            Legal Content to be created by nexora systems limited legal team
           </p>
           <p className="text-sm leading-relaxed" style={{ color: "#8BA3BC" }}>
             The terms of use for Nexora Systems Limited are currently being prepared. This page will contain the full, approved terms of use once they have been reviewed and authorised. Please contact us at{" "}
