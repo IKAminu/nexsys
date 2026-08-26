@@ -20,7 +20,7 @@ export default function Privacy() {
             style={{ color: "#1769FF" }}
           >
             {/* TODO: ADD CLIENT-APPROVED PRIVACY POLICY */}
-            Legal Content to be Provided by Client
+            Legal Content to be created by Nexora systems limited legal team.
           </p>
           <p className="text-sm leading-relaxed" style={{ color: "#8BA3BC" }}>
             The privacy policy for Nexora Systems Limited is currently being prepared. This page will contain the full, approved privacy policy once it has been reviewed and authorised. Please check back or contact us at{" "}
