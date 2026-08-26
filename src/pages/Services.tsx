@@ -138,9 +138,6 @@ export default function Services() {
                   </div>
                 ))}
               </div>
-              <p className="text-xs mt-6" style={{ color: "#1E3048" }}>
-                Note: Outcomes described are aspirational. No performance guarantees are implied.
-              </p>
             </div>
           </div>
         </Container>
