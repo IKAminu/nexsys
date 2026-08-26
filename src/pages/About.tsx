@@ -131,7 +131,7 @@ export default function About() {
                 style={{ background: "rgba(23, 105, 255, 0.15)", border: "1px solid #1769FF40" }}
               >
                 <img
-                  src={nexoraLogo}
+                  src="/nexsys/src/assets/nexora-logo.svg"
                   alt="Nexora Systems Limited logo"
                   className="w-9 h-9 object-contain"
                 />
