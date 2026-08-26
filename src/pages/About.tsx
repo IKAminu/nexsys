@@ -1,3 +1,10 @@
+/*
+ * Nexora Systems Limited
+ * Website designed and developed by Web4 Digital Solutions
+ * Lead Developer: IK Aminu
+ * https://web4.company.site/
+ */
+
 import Container from "@/components/ui/Container"
 import Button from "@/components/ui/Button"
 import VentureMark from "@/components/logos/VentureMark"
