@@ -204,7 +204,7 @@ Website designed and developed by Web4 Digital Solutions.
 Lead Developer: IK Aminu.
 
 Website:
-https://web4.company.site/
+https://ikaminu.cc.cd
 
 Portfolio:
 https://ikaminu.github.io/
