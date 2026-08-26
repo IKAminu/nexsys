@@ -286,13 +286,14 @@ export default function EcosystemAnimation() {
     )
   }
 
-  return (
-    <section
-      id="ecosystem"
-      ref={outerRef}
-      style={{ height: "500vh", position: "relative" }}
-      aria-label="Ecosystem overview"
-    >
+return (
+  <section 
+    id="ecosystem" 
+    ref={outerRef} 
+    className="mt-20"
+    style={{ height: "500vh", position: "relative" }} 
+    aria-label="Ecosystem overview" 
+  >
       {/* Sticky frame */}
       <div
         className="sticky top-0 h-screen overflow-hidden flex items-center justify-center"
