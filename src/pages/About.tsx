@@ -136,11 +136,11 @@ export default function About() {
                 className="w-12 h-12 rounded-[4px] flex items-center justify-center flex-shrink-0"
                 style={{ background: "rgba(23, 105, 255, 0.15)", border: "1px solid #1769FF40" }}
               >
-                <img
-                  src="/nexsys/src/assets/nexora-logo.svg"
-                  alt="Nexora Systems Limited logo"
-                  className="w-9 h-9 object-contain"
-                />
+               <img
+                src={nexoraLogo}
+                alt="Nexora Systems Limited logo"
+                className="w-9 h-9 object-contain"
+                  />
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white">{parentCompany.name}</h3>
