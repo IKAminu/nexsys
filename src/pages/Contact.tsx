@@ -90,31 +90,23 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Map placeholder */}
-                <div
-                  className="rounded-[4px] border overflow-hidden"
-                  style={{ borderColor: "#1E3048" }}
-                >
-                  <div
-                    className="aspect-[4/3] flex flex-col items-center justify-center p-6 text-center"
-                    style={{ background: "#0D1B2A" }}
-                  >
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" className="mb-3">
-                      <circle cx="14" cy="12" r="5" stroke="#1E3048" strokeWidth="1.5"/>
-                      <path d="M14 27C14 27 4 19.5 4 12a10 10 0 0120 0c0 7.5-10 15-10 15z"
-                        stroke="#1E3048" strokeWidth="1.5"/>
-                    </svg>
-                    <p
-                      className="text-[10px] font-mono tracking-widest uppercase leading-relaxed"
-                      style={{ color: "#1E3048" }}
-                    >
-                      {/* TODO: CONFIGURE MAP */}
-                      MAP INTEGRATION —<br />CONNECT AFTER EXPORT
-                    </p>
-                    <p className="text-xs mt-2" style={{ color: "#8BA3BC" }}>
-                      176 Azikiwe Road, Aba
-                    </p>
-                  </div>
+             {/* Google Maps */}
+              <div
+                className="rounded-[4px] border overflow-hidden"
+                style={{ borderColor: "#1E3048" }}
+              >
+                <div className="aspect-[4/3]">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1986.9875202632202!2d7.374786915368665!3d5.107724141988353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1787868784665!5m2!1sen!2sng"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    title="Nexora Systems Limited location"
+                  />
+                </div>
                 </div>
               </div>
             </div>
