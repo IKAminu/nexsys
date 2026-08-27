@@ -10,8 +10,7 @@ import Button from "@/components/ui/Button"
 import VentureMark from "@/components/logos/VentureMark"
 import { ventures, parentCompany } from "@/data/ventures"
 import nexoraLogo from "@/assets/nexora-logo.svg"
-import ceoPic from "@/assets/ceo_pic.jpeg"
-import "@/assets/ceo_pic.jpeg"
+import ceopic from "@/assets/ceo_pic.jpeg"
 
 const principles = [
   {
@@ -293,7 +292,7 @@ export default function About() {
                 style={{ background: "#0D1B2A", borderColor: "#1E3048" }}
               >
                 <img
-                  src={ceoPic}
+                  src={ceopic}
                   alt="Prince (Dr.) Tochukwu Christian Nnaji, Chief Executive Officer of Nexora Systems Limited"
                   className="w-full h-full object-cover"
                 />
