@@ -2,8 +2,9 @@ import { useRef, useState, useEffect, useCallback, type ReactElement } from "rea
 import Container from "@/components/ui/Container"
 import VentureMark from "@/components/logos/VentureMark"
 import { ventures, parentCompany } from "@/data/ventures"
+import venturesAnimation from "@/assets/ventures_animation.mp4"
 
-/* Venture-specific abstract media illustrations */
+/* Venture-specific abstract media illustrations kept as a fallback/reference. */
 function VentureMediaFrame({ ventureId }: { ventureId: string }) {
   const configs: Record<string, { bg: string; accent: string; label: string; icon: ReactElement }> = {
     "nexora-systems": {
@@ -12,7 +13,6 @@ function VentureMediaFrame({ ventureId }: { ventureId: string }) {
       label: "Technology & Digital Solutions",
       icon: (
         <g>
-          {/* Abstract digital workflow */}
           {[0,1,2,3].map(i => (
             <rect key={i} x={160 + i * 80} y={160} width={60} height={40} rx="3"
               fill="none" stroke="#1769FF" strokeWidth="1" opacity="0.4"/>
@@ -21,14 +21,12 @@ function VentureMediaFrame({ ventureId }: { ventureId: string }) {
             <line key={i} x1={220 + i*80} y1={180} x2={240 + i*80} y2={180}
               stroke="#1769FF" strokeWidth="1" opacity="0.5"/>
           ))}
-          {/* Connection lines down */}
           {[0,1,2,3].map(i => (
             <line key={`d${i}`} x1={190 + i*80} y1={200} x2={190 + i*80} y2={240}
               stroke="#1769FF" strokeWidth="1" opacity="0.3"/>
           ))}
           <rect x="130" y="240" width="440" height="120" rx="4"
             fill="rgba(23,105,255,0.08)" stroke="#1769FF" strokeWidth="1" opacity="0.5"/>
-          {/* Code lines */}
           {[0,1,2,3,4].map(i => (
             <rect key={`code${i}`} x={150} y={258 + i * 18} width={100 + (i%3)*60} height="6"
               rx="3" fill="#1769FF" opacity={0.2 + (i%3)*0.1}/>
@@ -44,7 +42,6 @@ function VentureMediaFrame({ ventureId }: { ventureId: string }) {
       label: "Digital Skills & Talent",
       icon: (
         <g>
-          {/* People nodes connected to learning hub */}
           {[0,1,2,3,4].map(i => {
             const angle = (i / 5) * Math.PI * 2 - Math.PI / 2
             const x = 350 + Math.cos(angle) * 130
@@ -61,7 +58,6 @@ function VentureMediaFrame({ ventureId }: { ventureId: string }) {
               </g>
             )
           })}
-          {/* Central hub */}
           <circle cx="350" cy="250" r="32" fill="rgba(34,197,94,0.12)"
             stroke="#22C55E" strokeWidth="1.5" opacity="0.6"/>
           <text x="350" y="255" textAnchor="middle" fill="#22C55E"
@@ -75,7 +71,6 @@ function VentureMediaFrame({ ventureId }: { ventureId: string }) {
       label: "Digital Commerce",
       icon: (
         <g>
-          {/* Product grid */}
           {[0,1,2,3,4,5].map(i => {
             const col = i % 3
             const row = Math.floor(i / 3)
@@ -85,7 +80,6 @@ function VentureMediaFrame({ ventureId }: { ventureId: string }) {
                 strokeWidth="1" opacity="0.5"/>
             )
           })}
-          {/* Connection lines to buyer */}
           <circle cx="490" cy="250" r="30" fill="rgba(168,85,247,0.12)"
             stroke="#A855F7" strokeWidth="1.5" opacity="0.6"/>
           {[0,1,2].map(i => (
@@ -103,7 +97,6 @@ function VentureMediaFrame({ ventureId }: { ventureId: string }) {
       label: "Logistics & Fulfilment",
       icon: (
         <g>
-          {/* Route network */}
           <circle cx="160" cy="200" r="16" fill="rgba(249,115,22,0.15)"
             stroke="#F97316" strokeWidth="1.5" opacity="0.6"/>
           <circle cx="350" cy="160" r="16" fill="rgba(249,115,22,0.15)"
@@ -114,7 +107,6 @@ function VentureMediaFrame({ ventureId }: { ventureId: string }) {
             stroke="#F97316" strokeWidth="1.5" opacity="0.6"/>
           <circle cx="440" cy="340" r="16" fill="rgba(249,115,22,0.15)"
             stroke="#F97316" strokeWidth="1.5" opacity="0.6"/>
-          {/* Routes */}
           {[[160,200,350,160],[350,160,530,220],[160,200,250,330],
             [350,160,250,330],[350,160,440,340],[530,220,440,340],
             [250,330,440,340]].map(([x1,y1,x2,y2], i) => (
@@ -122,7 +114,6 @@ function VentureMediaFrame({ ventureId }: { ventureId: string }) {
               stroke="#F97316" strokeWidth="1" opacity="0.3"
               strokeDasharray="6 3"/>
           ))}
-          {/* Truck icon on one route */}
           <rect x="320" y="138" width="30" height="18" rx="2"
             fill="#F97316" opacity="0.5"/>
           <rect x="350" y="143" width="14" height="13" rx="1"
@@ -141,7 +132,6 @@ function VentureMediaFrame({ ventureId }: { ventureId: string }) {
       className="relative w-full h-full flex flex-col items-center justify-center rounded-[4px] overflow-hidden"
       style={{ background: cfg.bg, border: `1px solid ${cfg.accent}30` }}
     >
-      {/* Development label */}
       <div
         className="absolute top-3 left-3 text-[9px] font-mono tracking-widest uppercase px-2 py-1 rounded-[2px]"
         style={{
@@ -155,7 +145,6 @@ function VentureMediaFrame({ ventureId }: { ventureId: string }) {
 
       <svg viewBox="0 0 700 420" className="w-full h-full" aria-hidden="true">
         {cfg.icon}
-        {/* TODO: INSERT FINAL ECOSYSTEM ANIMATION — Replace this SVG with the WebM/MP4 animation asset */}
       </svg>
 
       <p
@@ -221,6 +210,7 @@ function BranchDiagram() {
 
 export default function EcosystemAnimation() {
   const outerRef = useRef<HTMLDivElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
@@ -255,6 +245,18 @@ export default function EcosystemAnimation() {
   const showVentures = phase === "ventures"
   const showClosing = phase === "closing"
 
+  const syncVideoToScroll = useCallback(() => {
+    const video = videoRef.current
+    if (!video || !Number.isFinite(video.duration) || video.duration <= 0) return
+
+    const ventureProgress = Math.max(0, Math.min(1, (scrollProgress - 0.28) / 0.6))
+    video.currentTime = ventureProgress * video.duration
+  }, [scrollProgress])
+
+  useEffect(() => {
+    if (showVentures) syncVideoToScroll()
+  }, [showVentures, syncVideoToScroll])
+
   /* Reduced motion: simple static layout */
   if (prefersReducedMotion) {
     return (
@@ -286,14 +288,14 @@ export default function EcosystemAnimation() {
     )
   }
 
-return (
-  <section 
-    id="ecosystem" 
-    ref={outerRef} 
-    className="mt-20"
-    style={{ height: "500vh", position: "relative" }} 
-    aria-label="Ecosystem overview" 
-  >
+  return (
+    <section
+      id="ecosystem"
+      ref={outerRef}
+      className="mt-20"
+      style={{ height: "500vh", position: "relative" }}
+      aria-label="Ecosystem overview"
+    >
       {/* Sticky frame */}
       <div
         className="sticky top-0 h-screen overflow-hidden flex items-center justify-center"
@@ -301,9 +303,7 @@ return (
       >
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{
-            borderTop: "1px solid #1E3048",
-          }}
+          style={{ borderTop: "1px solid #1E3048" }}
           aria-hidden="true"
         />
 
@@ -369,9 +369,28 @@ return (
             pointerEvents: showVentures ? "auto" : "none",
           }}
         >
-          <div className="h-full flex flex-col md:flex-row items-stretch">
+          {/* Scroll-controlled video background. It is scrubbed from 0% to 100%
+              across the four venture stages rather than playing on its own clock. */}
+          <video
+            ref={videoRef}
+            src={venturesAnimation}
+            className="absolute inset-0 w-full h-full object-cover object-right md:object-center"
+            style={{ pointerEvents: "none" }}
+            muted
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+            onLoadedMetadata={syncVideoToScroll}
+          />
 
-            {/* Left: venture card stack */}
+          {/* Subtle readability layer for the venture information over the video. */}
+          <div
+            className="absolute inset-0 bg-[#07111F]/25 pointer-events-none"
+            aria-hidden="true"
+          />
+
+          {/* Venture information remains over the video background. */}
+          <div className="relative z-10 h-full flex flex-col md:flex-row items-stretch">
             <div
               className="flex flex-col justify-center gap-2 px-6 md:pl-12 xl:pl-20 py-8 md:py-0 md:w-[360px] xl:w-[420px] flex-shrink-0"
             >
@@ -420,25 +439,6 @@ return (
                   </button>
                 )
               })}
-            </div>
-
-            {/* Right: media frame */}
-            <div className="flex-1 p-4 md:p-8 xl:p-12 flex items-center">
-              <div className="w-full h-full min-h-[280px] md:min-h-0" style={{ maxHeight: "calc(100vh - 96px)" }}>
-                {ventures.map((v, i) => (
-                  <div
-                    key={v.id}
-                    className="absolute inset-4 md:inset-8 xl:inset-12 transition-all duration-600"
-                    style={{
-                      opacity: i === activeVenture ? 1 : 0,
-                      transform: i === activeVenture ? "translateX(0) scale(1)" : "translateX(12px) scale(0.98)",
-                      pointerEvents: i === activeVenture ? "auto" : "none",
-                    }}
-                  >
-                    <VentureMediaFrame ventureId={v.id} />
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
@@ -497,7 +497,7 @@ return (
 
         {/* Progress bar */}
         {showVentures && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5" aria-hidden="true">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-20" aria-hidden="true">
             {ventures.map((_, i) => (
               <div
                 key={i}
