@@ -66,7 +66,11 @@ export default function About() {
               A technology group building the infrastructure for connected business.
             </h1>
             <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "#8BA3BC" }}>
-              Nexora Systems Limited is developing a portfolio of technology-driven ventures designed to address practical problems across technology, commerce, logistics and digital skills. We are building complementary capabilities — not isolated products.
+              Nexora Systems Limited builds technology solutions that make business simpler, smarter and more connected.
+              <br /><br />
+              We operate across technology, commerce, logistics and digital skills, creating practical solutions to everyday business challenges.
+              <br /><br />
+              Our businesses are designed to complement one another, creating a connected ecosystem of products, services and capabilities.
             </p>
           </div>
         </Container>
