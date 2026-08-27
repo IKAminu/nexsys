@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container"
 import VentureMark from "@/components/logos/VentureMark"
 import { ventures, parentCompany } from "@/data/ventures"
 import venturesAnimation from "@/assets/ventures_animation.mp4"
+import nexoraLogo from "@/assets/nexora-logo.svg"
 
 /* Venture-specific abstract media illustrations kept as a fallback/reference. */
 function VentureMediaFrame({ ventureId }: { ventureId: string }) {
@@ -41,10 +42,11 @@ function ParentCard() {
   return (
     <div className="px-8 py-5 rounded-[4px] border text-center" style={{ background: "rgba(23, 105, 255, 0.08)", borderColor: "#1769FF", maxWidth: 340 }}>
       <div className="flex items-center justify-center gap-2 mb-2">
-        <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <path d="M3 3v26h6.5V11.5L22.5 29H29V3h-6.5v17.5L9 3H3z" fill="#1769FF"/>
-          <line x1="9.5" y1="3" x2="22.5" y2="29" stroke="#21D4FD" strokeWidth="1.5" opacity="0.7"/>
-        </svg>
+          <img
+            src={nexoraLogo}
+            alt="Nexora Systems Limited logo"
+            className="w-5 h-5 object-contain"
+            />
         <span className="text-xs font-bold tracking-[0.18em] uppercase text-white">Nexora Systems Limited</span>
       </div>
       <p className="text-xs" style={{ color: "#8BA3BC" }}>Parent Company / Technology Group</p>
