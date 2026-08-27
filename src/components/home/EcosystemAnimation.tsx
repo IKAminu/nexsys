@@ -206,7 +206,7 @@ export default function EcosystemAnimation() {
         </div>
 
         <div className="absolute inset-0 transition-all duration-700" style={{ opacity: showVentures ? 1 : 0, pointerEvents: showVentures ? "auto" : "none" }}>
-          <video ref={videoRef} src={venturesAnimation} className="absolute inset-0 w-full h-full object-cover object-right md:object-center" style={{ pointerEvents: "none" }} muted playsInline preload="auto" aria-hidden="true" />
+          <video ref={videoRef} src={venturesAnimation} className="absolute inset-0 w-full h-full object-cover object-center" style={{ pointerEvents: "none" }} muted playsInline preload="auto" aria-hidden="true" />
           <div className="absolute inset-0 bg-[#07111F]/50 pointer-events-none" aria-hidden="true" />
 
           <div className="relative z-10 h-full flex flex-col md:flex-row items-stretch">
@@ -216,12 +216,12 @@ export default function EcosystemAnimation() {
                 const isActive = i === activeVenture
                 return (
                   <button key={venture.id} className="text-left rounded-[4px] border transition-all duration-500 eco-card cursor-pointer" style={{ background: isActive ? `color-mix(in srgb, ${venture.accentColor} 50%, transparent)` : "rgba(13, 27, 42, 0.5)", borderColor: isActive ? venture.accentColor + "80" : "#1E3048", padding: isActive ? "20px 20px" : "12px 16px", opacity: isActive ? 1 : 0.55, transform: isActive ? "scale(1)" : "scale(0.97)" }} onClick={() => {}} aria-pressed={isActive}>
-                    {isActive && <p className="text-[10px] font-medium mb-3" style={{ color: venture.accentColor }}>{venture.focusPhrase}</p>}
+                    {isActive && <p className="text-[10px] font-medium mb-3" style={{ color: "#EAF4FF" }}>{venture.focusPhrase}</p>}
                     <div className="flex items-center gap-3">
                       <VentureMark venture={venture} size={isActive ? 40 : 30} />
-                      {isActive && <div><p className="text-sm font-semibold text-white">{venture.name}</p><p className="text-xs mt-0.5" style={{ color: venture.accentColor }}>{venture.tagline}</p></div>}
+                      {isActive && <div><p className="text-sm font-semibold text-white">{venture.name}</p><p className="text-xs mt-0.5" style={{ color: "#EAF4FF" }}>{venture.tagline}</p></div>}
                     </div>
-                    {isActive && <p className="text-xs leading-relaxed mt-3" style={{ color: "#8BA3BC" }}>{venture.description}</p>}
+                    {isActive && <p className="text-xs leading-relaxed mt-3" style={{ color: "#FFFFFF" }}>{venture.description}</p>}
                   </button>
                 )
               })}
@@ -238,8 +238,11 @@ export default function EcosystemAnimation() {
           </div>
         </div>
 
-        {(showIntroText || showHierarchy) && <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in" aria-hidden="true"><span className="text-[10px] tracking-widest uppercase" style={{ color: "#8BA3BC" }}>Scroll</span><svg width="14" height="20" viewBox="0 0 14 20" fill="none"><rect x="1" y="1" width="12" height="18" rx="6" stroke="#1E3048" strokeWidth="1.5"/><circle cx="7" cy="6" r="2" fill="#1769FF"><animate attributeName="cy" values="6;13;6" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite"/></circle></svg></div>}
-        {showVentures && <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5" aria-hidden="true">{ventures.map((_, i) => <div key={i} className="h-[2px] rounded-full transition-all duration-300" style={{ width: i === activeVenture ? 24 : 8, background: i === activeVenture ? ventures[i].accentColor : "#1E3048" }} />)}</div>}
+        {showVentures && (
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5" aria-hidden="true">
+            {ventures.map((_, i) => <div key={i} className="h-[2px] rounded-full transition-all duration-300" style={{ width: i === activeVenture ? 24 : 8, background: i === activeVenture ? ventures[i].accentColor : "#1E3048" }} />)}
+          </div>
+        )}
       </div>
     </section>
   )
