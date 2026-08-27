@@ -10,7 +10,7 @@ import Button from "@/components/ui/Button"
 import VentureMark from "@/components/logos/VentureMark"
 import { ventures, parentCompany } from "@/data/ventures"
 import nexoraLogo from "@/assets/nexora-logo.svg"
-import ceopic from "@/assets/ceo_pic.jpeg"
+import ceopic from "@/assets/ceo-pic.jpeg"
 
 const principles = [
   {
