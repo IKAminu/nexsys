@@ -67,7 +67,7 @@ export default function WhatNexoraDoes() {
             <SectionHeading
               eyebrow="What We Build"
               heading="Building connected technology-driven businesses."
-              subheading="Nexora Systems Limited is developing a portfolio of complementary ventures — each addressing a different dimension of how businesses operate and grow in a digital economy."
+              subheading="Nexora Systems Limited is developing a portfolio of complementary ventures, each addressing a different dimension of how businesses operate and grow in a digital economy."
               id="what-nexora-heading"
             />
           </div>
