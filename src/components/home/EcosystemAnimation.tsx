@@ -180,7 +180,7 @@ export default function EcosystemAnimation() {
 
   return (
     <section id="ecosystem" ref={outerRef} className="mt-20" style={{ height: "500vh", position: "relative" }} aria-label="Ecosystem overview">
-      <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center" style={{ background: "#07111F" }}>
+      <div className="sticky top-[80px] h-[calc(100vh-80px)] overflow-hidden flex items-center justify-center" style={{ background: "#07111F" }}>
         <div className="absolute inset-0 pointer-events-none" style={{ borderTop: "1px solid #1E3048" }} aria-hidden="true" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 transition-all duration-700" style={{ opacity: showIntroText ? 1 : 0, transform: showIntroText ? "translateY(0)" : "translateY(-20px)", pointerEvents: showIntroText ? "auto" : "none" }}>
