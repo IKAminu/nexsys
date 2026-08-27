@@ -11,15 +11,16 @@ import VentureMark from "@/components/logos/VentureMark"
 import { ventures, parentCompany } from "@/data/ventures"
 import nexoraLogo from "@/assets/nexora-logo.svg"
 import ceoPic from "@/assets/ceo_pic.jpeg"
+import "@/assets/ceo_pic.jpeg"
 
 const principles = [
   {
     name: "Practical",
-    description: "We build for real problems in real contexts — not theoretical solutions looking for problems.",
+    description: "We build for real problems in real contexts, not theoretical solutions looking for problems.",
   },
   {
     name: "Scalable",
-    description: "Our ventures are designed to grow — in users, in geography, in capability — without rebuilding from scratch.",
+    description: "Our ventures are designed to grow; in users, in geography, in capability; without rebuilding from scratch.",
   },
   {
     name: "Accessible",
@@ -31,11 +32,11 @@ const principles = [
   },
   {
     name: "Technology-driven",
-    description: "We use technology as the foundation for every venture — not as a feature, but as infrastructure.",
+    description: "We use technology as the foundation for every venture, not just as a feature, but as infrastructure.",
   },
   {
     name: "Human-centred",
-    description: "We build for people — the businesses that use our systems and the individuals who depend on them.",
+    description: "We build for people; the businesses that use our systems and the individuals who depend on them.",
   },
 ]
 
@@ -93,13 +94,13 @@ export default function About() {
                 Vision
               </h2>
               <p className="text-base leading-relaxed" style={{ color: "#8BA3BC" }}>
-                A future where technology-driven businesses are the foundation of African economic growth — where companies of every size can access the systems, skills, markets and logistics they need to compete and grow.
+                A future where technology-driven businesses are the foundation of African economic growth, where companies of every size can access the systems, skills, markets and logistics they need to compete and grow.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-bold text-white mb-4">Mission</h2>
               <p className="text-base leading-relaxed" style={{ color: "#8BA3BC" }}>
-                To build a connected ecosystem of technology-driven ventures that enable businesses to operate better, develop their people, reach customers and move products — through practical, scalable and accessible solutions.
+                To build a connected ecosystem of technology-driven ventures that enable businesses to operate better, develop their people, reach customers and move products, through practical, scalable and accessible solutions.
               </p>
             </div>
           </div>
@@ -292,7 +293,7 @@ export default function About() {
                 style={{ background: "#0D1B2A", borderColor: "#1E3048" }}
               >
                 <img
-                  src={ceoPic}
+                  src="src/assets/ceo_pic.jpeg"
                   alt="Prince (Dr.) Tochukwu Christian Nnaji, Chief Executive Officer of Nexora Systems Limited"
                   className="w-full h-full object-cover"
                 />
