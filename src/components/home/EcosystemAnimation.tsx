@@ -45,7 +45,7 @@ function ParentCard() {
           <img
             src={nexoraLogo}
             alt="Nexora Systems Limited logo"
-            className="w-5 h-5 object-contain"
+            className="w-8 h-8 object-contain"
             />
         <span className="text-xs font-bold tracking-[0.18em] uppercase text-white">Nexora Systems Limited</span>
       </div>
