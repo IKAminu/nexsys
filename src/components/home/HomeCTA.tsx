@@ -20,7 +20,7 @@ export default function HomeCTA() {
             Build with Nexora.
           </h2>
           <p className="text-base leading-relaxed mb-8 max-w-lg" style={{ color: "#8BA3BC" }}>
-            Whether you are looking to leverage technology, build talent, reach new customers or improve your logistics — we are building the ecosystem to support it.
+            Whether you are looking to leverage technology, build talent, reach new customers or improve your logistics, we are building the ecosystem to support it.
           </p>
           <Button href="/contact" variant="primary" size="lg" arrow>
             Partner With Us
