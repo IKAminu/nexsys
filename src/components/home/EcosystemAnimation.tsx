@@ -238,18 +238,8 @@ export default function EcosystemAnimation() {
           </div>
         </div>
 
-        {(showIntroText || showHierarchy) && (
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in" aria-hidden="true">
-            <span className="text-[10px] tracking-widest uppercase" style={{ color: "#8BA3BC" }}>Scroll</span>
-            <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><rect x="1" y="1" width="12" height="18" rx="6" stroke="#1E3048" strokeWidth="1.5"/><circle cx="7" cy="6" r="2" fill="#1769FF"><animate attributeName="cy" values="6;13;6" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite"/></circle></svg>
-          </div>
-        )}
-
-        {showVentures && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-20" aria-hidden="true">
-            {ventures.map((_, i) => <div key={i} className="h-[2px] rounded-full transition-all duration-300" style={{ width: i === activeVenture ? 24 : 8, background: i === activeVenture ? ventures[i].accentColor : "#1E3048" }} />)}
-          </div>
-        )}
+        {(showIntroText || showHierarchy) && <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in" aria-hidden="true"><span className="text-[10px] tracking-widest uppercase" style={{ color: "#8BA3BC" }}>Scroll</span><svg width="14" height="20" viewBox="0 0 14 20" fill="none"><rect x="1" y="1" width="12" height="18" rx="6" stroke="#1E3048" strokeWidth="1.5"/><circle cx="7" cy="6" r="2" fill="#1769FF"><animate attributeName="cy" values="6;13;6" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite"/></circle></svg></div>}
+        {showVentures && <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5" aria-hidden="true">{ventures.map((_, i) => <div key={i} className="h-[2px] rounded-full transition-all duration-300" style={{ width: i === activeVenture ? 24 : 8, background: i === activeVenture ? ventures[i].accentColor : "#1E3048" }} />)}</div>}
       </div>
     </section>
   )
