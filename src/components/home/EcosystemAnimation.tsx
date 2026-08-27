@@ -205,13 +205,13 @@ export default function EcosystemAnimation() {
           </div>
         </div>
 
-        <div className="absolute inset-0 transition-all duration-700" style={{ opacity: showVentures ? 1 : 0, pointerEvents: showVentures ? "auto" : "none" }}>
+        <div className="absolute inset-0 rounded-[16px] border border-[#1E3048] overflow-hidden transition-all duration-700" style={{ opacity: showVentures ? 1 : 0, pointerEvents: showVentures ? "auto" : "none" }}>
           <video ref={videoRef} src={venturesAnimation} className="absolute inset-0 w-full h-full object-cover object-center" style={{ pointerEvents: "none" }} muted playsInline preload="auto" aria-hidden="true" />
           <div className="absolute inset-0 bg-[#07111F]/50 pointer-events-none" aria-hidden="true" />
 
           <div className="relative z-10 h-full flex flex-col md:flex-row items-stretch">
             <div className="flex flex-col justify-center gap-2 px-6 md:pl-12 xl:pl-20 py-8 md:py-0 md:w-[360px] xl:w-[420px] flex-shrink-0">
-              <p className="text-[10px] font-semibold tracking-[0.2em] uppercase mb-2" style={{ color: "#1769FF" }}>Nexora Systems Limited manages its business through</p>
+              <p className="text-[10px] font-semibold tracking-[0.2em] uppercase mb-2" style={{ color: "#1769FF" }}>Imagine a business...</p>
               {ventures.map((venture, i) => {
                 const isActive = i === activeVenture
                 return (
