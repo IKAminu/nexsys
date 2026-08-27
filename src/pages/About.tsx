@@ -139,7 +139,7 @@ export default function About() {
                <img
                 src={nexoraLogo}
                 alt="Nexora Systems Limited logo"
-                className="w-9 h-9 object-contain"
+                className="w-10 h-10 object-contain"
                   />
               </div>
               <div>
