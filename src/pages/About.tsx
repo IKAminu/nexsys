@@ -10,6 +10,7 @@ import Button from "@/components/ui/Button"
 import VentureMark from "@/components/logos/VentureMark"
 import { ventures, parentCompany } from "@/data/ventures"
 import nexoraLogo from "@/assets/nexora-logo.svg"
+import ceoPic from "@/assets/ceo_pic.jpeg"
 
 const principles = [
   {
@@ -284,23 +285,17 @@ export default function About() {
             Leadership
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            {/* Photo placeholder */}
+            {/* CEO photo */}
             <div className="lg:col-span-3">
               <div
-                className="aspect-[3/4] rounded-[4px] flex flex-col items-center justify-center border"
+                className="aspect-[3/4] rounded-[4px] overflow-hidden border"
                 style={{ background: "#0D1B2A", borderColor: "#1E3048" }}
               >
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                  <circle cx="20" cy="16" r="8" stroke="#1E3048" strokeWidth="1.5"/>
-                  <path d="M4 36c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="#1E3048" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-                <p
-                  className="text-[10px] font-mono mt-3 text-center px-4 tracking-wide"
-                  style={{ color: "#1E3048" }}
-                >
-                  {/* TODO: INSERT APPROVED CEO PHOTO */}
-                  CEO PHOTO —<br />TO BE PROVIDED
-                </p>
+                <img
+                  src={ceoPic}
+                  alt="Prince (Dr.) Tochukwu Christian Nnaji, Chief Executive Officer of Nexora Systems Limited"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -309,10 +304,8 @@ export default function About() {
               <h2
                 id="ceo-heading"
                 className="text-2xl font-bold text-white mb-1"
-                style={{ color: "#1E3048" }}
               >
-                {/* TODO: INSERT CEO NAME */}
-                [CEO Name — To Be Provided]
+                Prince (Dr.) Tochukwu Christian Nnaji
               </h2>
               <p className="text-sm mb-6" style={{ color: "#1769FF" }}>
                 Chief Executive Officer, Nexora Systems Limited
