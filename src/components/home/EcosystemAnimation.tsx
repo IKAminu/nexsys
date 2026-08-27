@@ -207,7 +207,7 @@ export default function EcosystemAnimation() {
 
         <div className="absolute inset-0 transition-all duration-700" style={{ opacity: showVentures ? 1 : 0, pointerEvents: showVentures ? "auto" : "none" }}>
           <video ref={videoRef} src={venturesAnimation} className="absolute inset-0 w-full h-full object-cover object-right md:object-center" style={{ pointerEvents: "none" }} muted playsInline preload="auto" aria-hidden="true" />
-          <div className="absolute inset-0 bg-[#07111F]/25 pointer-events-none" aria-hidden="true" />
+          <div className="absolute inset-0 bg-[#07111F]/50 pointer-events-none" aria-hidden="true" />
 
           <div className="relative z-10 h-full flex flex-col md:flex-row items-stretch">
             <div className="flex flex-col justify-center gap-2 px-6 md:pl-12 xl:pl-20 py-8 md:py-0 md:w-[360px] xl:w-[420px] flex-shrink-0">
@@ -215,7 +215,7 @@ export default function EcosystemAnimation() {
               {ventures.map((venture, i) => {
                 const isActive = i === activeVenture
                 return (
-                  <button key={venture.id} className="text-left rounded-[4px] border transition-all duration-500 eco-card cursor-pointer" style={{ background: isActive ? venture.accentColorDim : "rgba(13, 27, 42, 0.5)", borderColor: isActive ? venture.accentColor + "80" : "#1E3048", padding: isActive ? "20px 20px" : "12px 16px", opacity: isActive ? 1 : 0.55, transform: isActive ? "scale(1)" : "scale(0.97)" }} onClick={() => {}} aria-pressed={isActive}>
+                  <button key={venture.id} className="text-left rounded-[4px] border transition-all duration-500 eco-card cursor-pointer" style={{ background: isActive ? `color-mix(in srgb, ${venture.accentColor} 50%, transparent)` : "rgba(13, 27, 42, 0.5)", borderColor: isActive ? venture.accentColor + "80" : "#1E3048", padding: isActive ? "20px 20px" : "12px 16px", opacity: isActive ? 1 : 0.55, transform: isActive ? "scale(1)" : "scale(0.97)" }} onClick={() => {}} aria-pressed={isActive}>
                     {isActive && <p className="text-[10px] font-medium mb-3" style={{ color: venture.accentColor }}>{venture.focusPhrase}</p>}
                     <div className="flex items-center gap-3">
                       <VentureMark venture={venture} size={isActive ? 40 : 30} />
