@@ -3,7 +3,7 @@ import SectionHeading from "@/components/ui/SectionHeading"
 
 const areas = [
   {
-    name: "Technology",
+    name: "Nexora Systems",
     description: "Digital solutions, software, systems and technology infrastructure.",
     accent: "#1769FF",
     icon: (
@@ -15,7 +15,7 @@ const areas = [
     ),
   },
   {
-    name: "Commerce",
+    name: "Nexora Marketplace",
     description: "Digital marketplaces and digital commerce platforms.",
     accent: "#A855F7",
     icon: (
@@ -28,7 +28,7 @@ const areas = [
     ),
   },
   {
-    name: "Logistics",
+    name: "Enyigo Logistics",
     description: "Technology-enabled movement, delivery and fulfilment.",
     accent: "#F97316",
     icon: (
@@ -41,7 +41,7 @@ const areas = [
     ),
   },
   {
-    name: "Skills",
+    name: "Nexora SkillNet",
     description: "Digital learning, professional development and talent development.",
     accent: "#22C55E",
     icon: (
