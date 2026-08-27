@@ -28,7 +28,7 @@ export default function EcosystemPrinciples() {
               Complementary capabilities. Not isolated platforms.
             </h2>
             <p className="mt-4 text-sm leading-relaxed" style={{ color: "#8BA3BC" }}>
-              Nexora is developing ventures that work together — each one addressing a different dimension of how businesses operate and grow.
+              Nexora is developing ventures that work together, each one addressing a different dimension of how businesses operate and grow.
             </p>
           </div>
 
