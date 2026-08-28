@@ -117,18 +117,17 @@ export default function ContactForm() {
           body: formData,
         })
       
-        if (!res.ok) throw new Error("Server error")
-      
-        const result = await res.json()
-      
-        if (!result.success) {
-          throw new Error(result.message || "Form submission failed")
-        }
-      
-        setStatus("success")
-      } catch {
-        setStatus("error")
-      }
+    const result = await res.json()
+
+    if (!res.ok || !result.success) {
+      throw new Error(result.error || result.message || `W3Forms error: ${res.status}`)
+    }
+    
+    setStatus("success")
+    } catch (error) {
+      console.error("W3Forms submission error:", error)
+      setStatus("error")
+    }
   }
   
   const fieldClass = (name: keyof FormState) =>
