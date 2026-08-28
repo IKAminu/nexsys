@@ -5,7 +5,7 @@ export const siteConfig = {
     "Nexora Systems Limited is building a connected ecosystem of technology-driven ventures designed to address practical problems across technology, commerce, logistics and digital skills.",
   contact: {
     email: "info@nexorasys.ng",
-    phone: "+234 803 7960 751",
+    phone: "+234 818 706 6608",
     address: {
       street: "176 Azikiwe Road",
       city: "Aba",
