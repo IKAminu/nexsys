@@ -4,7 +4,7 @@ import Button from "@/components/ui/Button"
 
 // The endpoint should accept POST requests with JSON body containing the fields below
 // and return { success: true } or { success: false, error: string }
-const W3FORMS_ACCESS_KEY = import.meta.env.VITE_W3FORMS_ACCESS_KEY
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
 
 interface FormState {
   fullName: string
@@ -100,7 +100,7 @@ export default function ContactForm() {
     try {
         const formData = new FormData()
       
-        formData.append("access_key", W3FORMS_ACCESS_KEY)
+        formData.append("access_key", WEB3FORMS_ACCESS_KEY)
         formData.append("name", form.fullName)
         formData.append("company", form.company)
         formData.append("email", form.email)
@@ -109,7 +109,7 @@ export default function ContactForm() {
         formData.append("message", form.message)
         formData.append("_trap", form._trap)
       
-        const res = await fetch("https://api.w3forms.com/submit", {
+        const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: {
             Accept: "application/json",
