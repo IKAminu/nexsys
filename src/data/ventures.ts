@@ -15,7 +15,7 @@ export const ventures: Venture[] = [
     name: "Nexora Systems",
     tagline: "Technology & Digital Solutions",
     description:
-      "Digital solutions, software development, systems integration and technology infrastructure for businesses.",
+      "Builds software, digital solutions, and technology systems that helps businesses operate smarter and grow.",
     focusPhrase: "Manages its operations through",
     accentColor: "#1769FF",
     accentColorDim: "rgba(23, 105, 255, 0.15)",
@@ -26,7 +26,7 @@ export const ventures: Venture[] = [
     name: "Nexora SkillNet",
     tagline: "Digital Skills & Talent",
     description:
-      "Digital learning, professional development and talent development programmes designed to build capable people.",
+      "Provide digital learning and skills development that prepares people for opportunities in the digital economy.",
     focusPhrase: "Develops its people through",
     accentColor: "#22C55E",
     accentColorDim: "rgba(34, 197, 94, 0.15)",
@@ -37,7 +37,7 @@ export const ventures: Venture[] = [
     name: "Nexora Marketplace",
     tagline: "Digital Commerce",
     description:
-      "A digital marketplace connecting buyers and sellers through reliable, technology-enabled commerce infrastructure.",
+      "Connect businesses and customers through digital marketplace that make buying and selling easier.",
     focusPhrase: "Reaches customers through",
     accentColor: "#A855F7",
     accentColorDim: "rgba(168, 85, 247, 0.15)",
@@ -48,7 +48,7 @@ export const ventures: Venture[] = [
     name: "Enyigo Logistics",
     tagline: "Logistics & Fulfilment",
     description:
-      "Technology-enabled movement, delivery and fulfilment solutions supporting businesses across Nigeria.",
+      "Uses technology to make the movement, delivery and fulfillment of goods faster and more efficient.",
     focusPhrase: "Moves products through",
     accentColor: "#F97316",
     accentColorDim: "rgba(249, 115, 22, 0.15)",
