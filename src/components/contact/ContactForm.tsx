@@ -126,6 +126,8 @@ export default function ContactForm() {
       } catch {
         setStatus("error")
       }
+  }
+  
   const fieldClass = (name: keyof FormState) =>
     `w-full px-4 py-3 rounded-[3px] border text-sm text-white bg-transparent outline-none transition-colors focus:border-[#1769FF] placeholder:text-[#8BA3BC] ${
       errors[name] ? "border-red-500" : "border-[#1E3048] hover:border-[#2A4060]"
