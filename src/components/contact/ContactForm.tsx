@@ -111,6 +111,9 @@ export default function ContactForm() {
       
         const res = await fetch("https://api.w3forms.com/submit", {
           method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
           body: formData,
         })
       
