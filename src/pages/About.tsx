@@ -68,9 +68,9 @@ export default function About() {
             </h1>
             <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "#8BA3BC" }}>
               Nexora Systems Limited builds technology solutions that make business simpler, smarter and more connected.
-              <br /><br />
+              <br />
               We operate across technology, commerce, logistics and digital skills, creating practical solutions to everyday business challenges.
-              <br /><br />
+              <br />
               Our businesses are designed to complement one another, creating a connected ecosystem of products, services and capabilities.
             </p>
           </div>
