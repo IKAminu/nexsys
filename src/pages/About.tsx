@@ -299,45 +299,28 @@ export default function About() {
               </div>
             </div>
 
-            {/* Bio */}
-            <div className="lg:col-span-9">
-              <h2
-                id="ceo-heading"
-                className="text-2xl font-bold text-white mb-1"
-              >
-                Prince (Dr.) Tochukwu Christian Nnaji
-              </h2>
-              <p className="text-sm mb-6" style={{ color: "#1769FF" }}>
-                Chief Executive Officer, Nexora Systems Limited
+           <div
+              className="p-5 rounded-[4px] border"
+              style={{ background: "#0D1B2A", borderColor: "#1E3048" }}
+            >
+              <p className="text-sm leading-relaxed text-white">
+                <span style={{ color: "#1769FF", fontWeight: 600 }}>
+                  Prince (Dr.) Tochukwu
+                </span>{" "}
+                Christian Nnaji is the Chief Executive Officer of Nexora Systems
+                Limited, where he leads the development of technology driven businesses
+                focused on practical solutions across technology, commerce, logistics and
+                digital skills.
               </p>
-              <div
-                className="p-5 rounded-[4px] border"
-                style={{ background: "#0D1B2A", borderColor: "#1E3048" }}
-              >
-                <p
-                  className="text-xs font-mono tracking-widest uppercase mb-3"
-                  style={{ color: "#1E3048" }}
-                >
-                  {/* TODO: INSERT APPROVED CEO BIOGRAPHY */}
-                  APPROVED CEO BIOGRAPHY — TO BE PROVIDED
-                </p>
-                <div className="space-y-3">
-                  {[1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="h-3 rounded-full"
-                      style={{
-                        background: "#1E3048",
-                        width: i === 3 ? "60%" : "100%",
-                      }}
-                      aria-hidden="true"
-                    />
-                  ))}
-                </div>
-              </div>
+            
+              <p className="text-sm leading-relaxed text-white mt-3">
+                With a focus on building connected capabilities rather than isolated
+                products, he oversees the company's strategic direction and the
+                development of an ecosystem designed to help businesses operate more
+                efficiently, access new markets and grow through technology.
+              </p>
             </div>
-          </div>
-        </Container>
+          </Container>
       </section>
 
       {/* CTA */}
