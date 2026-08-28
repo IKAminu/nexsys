@@ -1,11 +1,10 @@
 import { useState, useRef } from "react"
 import Button from "@/components/ui/Button"
 
-// TODO: CONNECT CONTACT FORM TO MAKE WEBHOOK
-// Set VITE_CONTACT_FORM_ENDPOINT in your .env file to connect the form
+
 // The endpoint should accept POST requests with JSON body containing the fields below
 // and return { success: true } or { success: false, error: string }
-const FORM_ENDPOINT = import.meta.env.VITE_CONTACT_FORM_ENDPOINT as string | undefined
+const W3FORMS_ACCESS_KEY = import.meta.env.VITE_W3FORMS_ACCESS_KEY
 
 interface FormState {
   fullName: string
@@ -99,31 +98,34 @@ export default function ContactForm() {
     setStatus("loading")
 
     try {
-      if (!FORM_ENDPOINT) {
-        // TODO: CONNECT CONTACT FORM TO MAKE WEBHOOK
-        // Simulate success in development when no endpoint is configured
-        await new Promise((r) => setTimeout(r, 1200))
+        const formData = new FormData()
+      
+        formData.append("access_key", W3FORMS_ACCESS_KEY)
+        formData.append("name", form.fullName)
+        formData.append("company", form.company)
+        formData.append("email", form.email)
+        formData.append("phone", form.phone)
+        formData.append("subject", `Nexora Website Enquiry: ${form.subject}`)
+        formData.append("message", form.message)
+        formData.append("_trap", form._trap)
+      
+        const res = await fetch("https://api.w3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        })
+      
+        if (!res.ok) throw new Error("Server error")
+      
+        const result = await res.json()
+      
+        if (!result.success) {
+          throw new Error(result.message || "Form submission failed")
+        }
+      
         setStatus("success")
-        return
+      } catch {
+        setStatus("error")
       }
-
-      const { _trap, ...payload } = form
-      void _trap
-
-      const res = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      })
-
-      if (!res.ok) throw new Error("Server error")
-
-      setStatus("success")
-    } catch {
-      setStatus("error")
-    }
-  }
-
   const fieldClass = (name: keyof FormState) =>
     `w-full px-4 py-3 rounded-[3px] border text-sm text-white bg-transparent outline-none transition-colors focus:border-[#1769FF] placeholder:text-[#8BA3BC] ${
       errors[name] ? "border-red-500" : "border-[#1E3048] hover:border-[#2A4060]"
