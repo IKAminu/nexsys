@@ -320,6 +320,7 @@ export default function About() {
                 efficiently, access new markets and grow through technology.
               </p>
             </div>
+          </div>
           </Container>
       </section>
 
