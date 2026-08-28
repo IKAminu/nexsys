@@ -23,7 +23,7 @@ export default function Services() {
               Solutions & Capabilities.
             </h1>
             <p className="text-lg leading-relaxed max-w-2xl mb-8" style={{ color: "#8BA3BC" }}>
-              Nexora is building technology-driven capabilities across technology, commerce, logistics and skills. Our ventures are designed to address practical business challenges across each of these domains.
+              Nexora builds and connects solutions that help businesses operate better across our domains, reach more customers, move products efficiently and develop the skills needed to grow.
             </p>
             <Button href="/contact" variant="primary" size="md" arrow>
               Discuss a Partnership
